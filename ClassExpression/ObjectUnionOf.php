@@ -9,8 +9,6 @@
  
 class ObjectUnionOf extends ClassExpression {
 
-//    private $classExpressions;
-    
     public function __toString(){
         return implode(" or ", $this->getElements());
     }
