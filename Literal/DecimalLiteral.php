@@ -9,4 +9,7 @@
  
 class DecimalLiteral extends Literal {
 
+    public function getDataType(){
+        return "decimal";
+    }
 }

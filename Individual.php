@@ -24,6 +24,6 @@ class Individual implements RdfPhp{
     }
 
     public function toRdfArray() {
-        // TODO: Implement toRdfArray() method.
+        return $this->value;
     }
 }

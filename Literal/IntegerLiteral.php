@@ -9,4 +9,8 @@
  
 class IntegerLiteral extends Literal {
 
+    public function getDataType() {
+        return "integer";
+    }
+
 }

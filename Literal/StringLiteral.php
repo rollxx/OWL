@@ -16,7 +16,7 @@ class StringLiteral extends Literal{
         if($languageTag)$this->setLanguageTag($languageTag);
     }
 
-    public function getLanguageTag(){
+    public function getLang(){
         return $this->languageTag;
     }
 
@@ -27,4 +27,5 @@ class StringLiteral extends Literal{
     public function __toString() {
         return $this->languageTag ? parent::__toString() . "@" . $this->languageTag : parent::__toString();
     }
+
 }

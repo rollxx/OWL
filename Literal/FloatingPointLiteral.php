@@ -9,4 +9,7 @@
  
 class FloatingPointLiteral extends Literal {
 
+    public function getDataType(){
+        return "float";
+    }
 }

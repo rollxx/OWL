@@ -12,7 +12,14 @@ class OwlList implements RdfPhp {
     private $list;
 
     public function toRdfArray() {
-        throw new Exception("Please implement and call from the correct class");
+        $bNodeId = "_:x";
+        $retval = "";
+        foreach($this->getElements() as $element){
+            $retval .= $bNodeId . " rdf:first " . $element->toRdfArray();
+            $retval .= "\n" . $bNodeId . " rdf:rest " . "nextbnode";
+        }
+        return $retval;
+//        throw new Exception("Please implement and call from the correct class");
     }
 
     public function __toString() {

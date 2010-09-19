@@ -14,7 +14,15 @@ class AnnotationValue implements RdfPhp {
     }
 
     public function toRdfArray() {
-        throw new Exception("Please implement and call from the correct class");
+        throw new Exception("Please implement and call from the correct classss");
+    }
+
+    public function getValue() {
+        // TODO: Implement getValue() method.
+    }
+
+    public function getType() {
+        // TODO: Implement getType() method.
     }
 
 }

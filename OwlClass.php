@@ -14,8 +14,8 @@ class OwlClass extends ClassExpression {
     }
 
     public function toRdfArray() {
-        parent::createArray($this->getNewBlankNodeId(),"rdf:type", "uri", "owl:class");
-        parent::toRdfArray();
+//        parent::createArray($this->getNewBlankNodeId(),"rdf:type", "uri", "owl:class");
+//        parent::toRdfArray();
     }
 
     function __construct(Iri $element) {

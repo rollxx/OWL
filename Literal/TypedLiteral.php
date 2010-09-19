@@ -27,6 +27,4 @@ class TypedLiteral extends Literal{
     public function __toString() {
         return parent::__toString() . "^^" . $this->getDataType();
     }
-
-
 }

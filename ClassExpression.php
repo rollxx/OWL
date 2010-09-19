@@ -10,12 +10,6 @@
 class ClassExpression implements RdfPhp {
 
     private $elements;
-    private $blankNodeId = 0;
-    private $blankNodeLabel = '_b:';
-
-    private function getNewBlankNodeId(){
-        return $this->blankNodeLabel . $this->blankNodeId++;
-    }
 
     function __construct($element=null) {
         $this->elements = array();
@@ -34,10 +28,11 @@ class ClassExpression implements RdfPhp {
     }
 
     public function toRdfArray() {
+//        $retval = "";
+//        foreach($this->getElements() as $element){
+//            $retval .= $element->toRdfArray();
+//
+//        }
         throw new Exception("Please implement and call from the correct class");
     }
-
-//    protected function createArray($s, $p, $type, $value, $lang=null, $datatype=null){
-//        return array($s => array($p => array(array("type" => $type, "value" => $value))));
-//    }
 }
