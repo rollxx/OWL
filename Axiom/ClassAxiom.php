@@ -1,0 +1,22 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: roll
+ * Date: Aug 26, 2010
+ * Time: 12:52:48 PM
+ * To change this template use File | Settings | File Templates.
+ */
+ 
+class ClassAxiom extends Axiom{
+
+    private $classExpressions = array();    
+
+    function __construct($element) {
+        $this->addElement($element);
+    }
+
+    public function addElement($element){
+        $this->classExpressions []= $element;
+    }
+
+}
