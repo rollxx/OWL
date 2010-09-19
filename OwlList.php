@@ -12,14 +12,17 @@ class OwlList implements RdfPhp {
     private $list;
 
     public function toRdfArray() {
-        $bNodeId = "_:x";
-        $retval = "";
-        foreach($this->getElements() as $element){
-            $retval .= $bNodeId . " rdf:first " . $element->toRdfArray();
-            $retval .= "\n" . $bNodeId . " rdf:rest " . "nextbnode";
+        $bNodeId = RdfArray::getNewBnodeId();
+        $nextBNodeId = null;
+        $retval = array();
+        $elements = $this->getElements();
+        foreach ($elements as $element){
+            $retval []= RdfArray::createArray($bNodeId, "rdf:first", $element->getType(), "".$element);
+            $nextBNodeId = RdfArray::getNewBnodeId();
+            $retval []= RdfArray::createArray($bNodeId, "rdf:rest", "bnode", ($element != end($elements)?$nextBNodeId:"rdf:nil"));
+            $bNodeId = $nextBNodeId;
         }
         return $retval;
-//        throw new Exception("Please implement and call from the correct class");
     }
 
     public function __toString() {
@@ -40,7 +43,17 @@ class OwlList implements RdfPhp {
     }
 
     public function addAllElements(OwlList $list){
-        $this->list []= $list->getElements();
+        foreach ($list->getElements() as $element){
+            $this->list []= $element;
+        }
+    }
+
+    public function getValue() {
+        // TODO: Implement getValue() method.
+    }
+
+    public function getType() {
+        // TODO: Implement getType() method.
     }
 
 }

@@ -11,12 +11,16 @@ class ClassAxiom extends Axiom{
 
     private $classExpressions = array();    
 
-    function __construct($element) {
-        $this->addElement($element);
+    function __construct($element=null, $nextElement=null) {
+        if($element) $this->addElement($element);
+        if($nextElement) $this->addElement($nextElement);
     }
 
     public function addElement($element){
         $this->classExpressions []= $element;
     }
 
+    public function getElements(){
+        return $this->classExpressions;
+    }
 }

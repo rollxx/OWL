@@ -18,4 +18,8 @@ class Assertion extends Axiom {
     public function addElement($element){
         $this->individuals []= $element;
     }
+
+    public function getElements(){
+        return $this->individuals;
+    }
 }

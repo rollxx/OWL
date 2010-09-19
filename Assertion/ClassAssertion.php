@@ -7,12 +7,28 @@
  * To change this template use File | Settings | File Templates.
  */
  
-class ClassAssertion extends Assertion {
+class ClassAssertion extends Assertion implements RdfPhp{
 
     private $classExpression;
 
-    function __construct($classExpression, $individual) {
+    function __construct($individual, $classExpression) {
         parent::__construct($individual);
         $this->classExpression = $classExpression;
+    }
+
+    function __toString() {
+        return  implode(" ", $this->getElements()). " rdf:type ". $this->classExpression ;
+    }
+
+    public function getValue() {
+        // TODO: Implement getValue() method.
+    }
+
+    public function getType() {
+        // TODO: Implement getType() method.
+    }
+
+    public function toRdfArray() {
+        return RdfArray::createArray(implode(" ", $this->getElements()), "rdf:type", "uri", "".$this->classExpression);
     }
 }

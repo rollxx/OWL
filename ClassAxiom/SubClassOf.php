@@ -7,11 +7,22 @@
  * To change this template use File | Settings | File Templates.
  */
  
-class SubClassOf extends ClassAxiom{
+class SubClassOf extends ClassAxiom implements RdfPhp{
 
-    function __construct($superClassExpression, $subClassExpression) {
-        parent::__construct($superClassExpression);
-        $this->addElement($subClassExpression);
+    public function __toString() {
+        $elements = $this->getElements();
+        return $elements[0] . " rdfs:subClassOf " . $elements[1];
     }
 
+    public function getValue() {
+        // TODO: Implement getValue() method.
+    }
+
+    public function getType() {
+        // TODO: Implement getType() method.
+    }
+
+    public function toRdfArray() {
+        // TODO: Implement toRdfArray() method.
+    }
 }

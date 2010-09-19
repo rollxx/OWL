@@ -20,10 +20,14 @@ class Individual implements RdfPhp{
     }
 
     function __toString() {
-        return $this->value;
+        return "".$this->value;
     }
 
     public function toRdfArray() {
         return $this->value;
+    }
+
+    public function getType() {
+        // TODO: Implement getType() method.
     }
 }

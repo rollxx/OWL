@@ -8,6 +8,13 @@
  */
  
 class ClassExpression implements RdfPhp {
+    public function getValue() {
+        // TODO: Implement getValue() method.
+    }
+
+    public function getType() {
+        // TODO: Implement getType() method.
+    }
 
     private $elements;
 
@@ -28,11 +35,6 @@ class ClassExpression implements RdfPhp {
     }
 
     public function toRdfArray() {
-//        $retval = "";
-//        foreach($this->getElements() as $element){
-//            $retval .= $element->toRdfArray();
-//
-//        }
         throw new Exception("Please implement and call from the correct class");
     }
 }

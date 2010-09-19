@@ -8,5 +8,10 @@
  */
  
 class EquivalentClasses extends ClassAxiom{
+    
+    public function __toString() {
+        $elements = $this->getElements();
+        return $elements[0] . " owl:equivalentClass " . $elements[1];
+    }
 
 }
