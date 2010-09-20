@@ -20,7 +20,6 @@ class OwlList implements RdfPhp {
             $retval []= RdfArray::createArray(
                 $bNodeId,
                 "rdf:first",
-                $element->getType(),
                 $element->getValue(),
                 $element instanceof StringLiteral ? $element->getLang():null,
                 method_exists($element, "getDatatype")?$element->getDatatype():null
@@ -29,7 +28,6 @@ class OwlList implements RdfPhp {
             $retval []= RdfArray::createArray(
                 $bNodeId,
                 "rdf:rest",
-                "bnode",
                 ($element != end($elements)?$nextBNodeId:"rdf:nil")
             );
             $bNodeId = $nextBNodeId;
@@ -63,9 +61,4 @@ class OwlList implements RdfPhp {
     public function getValue() {
         // TODO: Implement getValue() method.
     }
-
-    public function getType() {
-        // TODO: Implement getType() method.
-    }
-
 }

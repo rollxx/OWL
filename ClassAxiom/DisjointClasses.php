@@ -21,8 +21,8 @@ class DisjointClasses extends ClassAxiom{
         return $elements[0] . " owl:equivalentClass " . $elements[1];
     }
     public function toRdfArray(){
-        $retval = RdfArray::createArray("bnode", "rdf:type", "bnode", "owl:AllDisjointClasses");
-        $retval []= RdfArray::createArray("bnode", "owl:members", "wtf", implode(" ", $this->getElements()));
+        $retval = RdfArray::createArray("bnode", "rdf:type", "owl:AllDisjointClasses");
+        $retval []= RdfArray::createArray("bnode", "owl:members", implode(" ", $this->getElements()));
         return $retval;
     }
 }

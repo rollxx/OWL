@@ -20,9 +20,4 @@ class AnnotationValue implements RdfPhp {
     public function getValue() {
         // TODO: Implement getValue() method.
     }
-
-    public function getType() {
-        // TODO: Implement getType() method.
-    }
-
 }

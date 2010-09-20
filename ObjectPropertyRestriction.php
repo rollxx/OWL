@@ -36,9 +36,9 @@ class ObjectPropertyRestriction extends ClassExpression implements IRestriction{
 
     public function toRdfArray() {
         $bnodeId = RdfArray::getNewBnodeId();
-        $retval = RdfArray::createArray($bnodeId, "rdf:type", "uri", "owl:Restriction");
-        $retval []= RdfArray::createArray($bnodeId, "owl:onProperty", "uri", $this->getObjectPropertyExpression());
-        $retval []= RdfArray::createArray($bnodeId, $this->getPredicateString(), "uri", $this->getClassExpression());
+        $retval = RdfArray::createArray($bnodeId, "rdf:type", "owl:Restriction");
+        $retval []= RdfArray::createArray($bnodeId, "owl:onProperty", $this->getObjectPropertyExpression());
+        $retval []= RdfArray::createArray($bnodeId, $this->getPredicateString(), $this->getClassExpression());
         return $retval;
     }
 

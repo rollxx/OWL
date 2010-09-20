@@ -27,7 +27,4 @@ class Individual implements RdfPhp{
         return $this->value;
     }
 
-    public function getType() {
-        // TODO: Implement getType() method.
-    }
 }

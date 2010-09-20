@@ -23,10 +23,6 @@ class Literal extends AnnotationValue {
         return $this->lexicalValue;
     }
 
-    public function getType(){
-        return "literal";
-    }
-
     public function getValue(){
         return $this->getLexicalValue();
     }

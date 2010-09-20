@@ -11,8 +11,12 @@ class RdfArray {
 
     private static $id = 0;
 
-    public static function createArray($s, $p, /*$o, */$type, $value, $lang=null, $dataType=null) {
-        $literal = array("type"=>$type, "value"=>$value);
+    public static function createArray($s, $p, $value, $lang=null, $dataType=null) {
+        $rdfPhpType = "uri";
+        if($value instanceof Literal) $rdfPhpType = "literal";
+        else if(is_string($value)) $rdfPhpType = "bnode";
+        
+        $literal = array("type"=>$rdfPhpType, "value"=>$value);
         if($value instanceof AnnotationValue){
             $literal["value"] = $value->getValue();
             if($value instanceof StringLiteral) $literal["lang"] = $value->getLang();

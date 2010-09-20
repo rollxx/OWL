@@ -11,8 +11,6 @@ interface RdfPhp {
 
     public function toRdfArray();
 
-    public function getType();
-
     public function getValue();
 
     public function __toString();

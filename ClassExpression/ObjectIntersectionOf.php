@@ -9,8 +9,6 @@
  
 class ObjectIntersectionOf extends ClassExpression {
 
-//    private $classExpressions;
-
     public function __toString(){
         return "(" . implode(" and ", $this->getElements()) .")";
     }

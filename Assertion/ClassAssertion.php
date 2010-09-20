@@ -24,11 +24,7 @@ class ClassAssertion extends Assertion implements RdfPhp{
         // TODO: Implement getValue() method.
     }
 
-    public function getType() {
-        // TODO: Implement getType() method.
-    }
-
     public function toRdfArray() {
-        return RdfArray::createArray(implode(" ", $this->getElements()), "rdf:type", "uri", "".$this->classExpression);
+        return RdfArray::createArray(implode(" ", $this->getElements()), "rdf:type", "".$this->classExpression);
     }
 }

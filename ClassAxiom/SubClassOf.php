@@ -18,10 +18,6 @@ class SubClassOf extends ClassAxiom implements RdfPhp{
         // TODO: Implement getValue() method.
     }
 
-    public function getType() {
-        // TODO: Implement getType() method.
-    }
-
     public function toRdfArray() {
         // TODO: Implement toRdfArray() method.
     }
