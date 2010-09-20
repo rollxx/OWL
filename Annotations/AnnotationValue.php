@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
  
-class AnnotationValue implements RdfPhp {
+class AnnotationValue implements IRdfPhp {
 
     public function __toString() {
         throw new Exception("Please implement and call from the correct class");

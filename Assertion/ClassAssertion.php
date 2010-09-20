@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
  
-class ClassAssertion extends Assertion implements RdfPhp{
+class ClassAssertion extends Assertion implements IRdfPhp{
 
     private $classExpression;
 

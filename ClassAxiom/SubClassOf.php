@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
  
-class SubClassOf extends ClassAxiom implements RdfPhp{
+class SubClassOf extends ClassAxiom implements IRdfPhp{
 
     public function __toString() {
         $elements = $this->getElements();
