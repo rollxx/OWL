@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
-interface RdfPhp {
+interface IRdfPhp {
 
     public function toRdfArray();
 

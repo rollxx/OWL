@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
  
-class Individual implements RdfPhp{
+class Individual implements IRdfPhp{
 
     private $value;
 

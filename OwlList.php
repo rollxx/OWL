@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
  
-class OwlList implements RdfPhp {
+class OwlList implements IRdfPhp {
 
     private $list;
 

@@ -7,13 +7,9 @@
  * To change this template use File | Settings | File Templates.
  */
  
-class ClassExpression implements RdfPhp {
+class ClassExpression implements IRdfPhp {
     public function getValue() {
         // TODO: Implement getValue() method.
-    }
-
-    public function getType() {
-        // TODO: Implement getType() method.
     }
 
     private $elements;
