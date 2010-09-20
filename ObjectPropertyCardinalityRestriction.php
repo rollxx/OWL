@@ -20,4 +20,13 @@ class ObjectPropertyCardinalityRestriction extends ObjectPropertyRestriction{
         return $this->getObjectPropertyExpression()." ".$this->getRestrictionLabel()." "
                 . $this->cardinality . ($this->getClassExpression()? " " . $this->getClassExpression() : "");
     }
+    public function toRdfArray() {
+        $bnodeId = RdfArray::getNewBnodeId();
+        $retval = RdfArray::createArray($bnodeId, "rdf:type", "uri", "owl:Restriction");
+        $retval []= RdfArray::createArray($bnodeId, "owl:qualifiedCardinality", "literal", new TypedLiteral($this->cardinality, "xsd:nonNegativeInteger"));
+        $retval []= RdfArray::createArray($bnodeId, "owl:onProperty", "uri", $this->getObjectPropertyExpression());
+        $retval []= RdfArray::createArray($bnodeId, "owl:onClass", "uri", $this->getClassExpression());
+        return $retval;
+    }
+
 }

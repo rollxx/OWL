@@ -12,5 +12,13 @@ class ObjectHasSelf extends ObjectPropertyRestriction {
     public function getRestrictionLabel() {
         return "Self";
     }
+    
+    public function getPredicateString(){
+        return "owl:hasSelf";
+    }
+
+    protected function getClassExpression() {
+        return new TypedLiteral("true", "xsd:boolean");
+    }
 
 }

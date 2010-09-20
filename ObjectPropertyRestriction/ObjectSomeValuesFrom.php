@@ -13,4 +13,7 @@ class ObjectSomeValuesFrom extends ObjectPropertyRestriction{
         return "some";
     }
 
+    public function getPredicateString(){
+        return "owl:someValuesFrom";
+    }
 }

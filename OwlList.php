@@ -17,9 +17,21 @@ class OwlList implements RdfPhp {
         $retval = array();
         $elements = $this->getElements();
         foreach ($elements as $element){
-            $retval []= RdfArray::createArray($bNodeId, "rdf:first", $element->getType(), "".$element);
+            $retval []= RdfArray::createArray(
+                $bNodeId,
+                "rdf:first",
+                $element->getType(),
+                $element->getValue(),
+                $element instanceof StringLiteral ? $element->getLang():null,
+                method_exists($element, "getDatatype")?$element->getDatatype():null
+            );
             $nextBNodeId = RdfArray::getNewBnodeId();
-            $retval []= RdfArray::createArray($bNodeId, "rdf:rest", "bnode", ($element != end($elements)?$nextBNodeId:"rdf:nil"));
+            $retval []= RdfArray::createArray(
+                $bNodeId,
+                "rdf:rest",
+                "bnode",
+                ($element != end($elements)?$nextBNodeId:"rdf:nil")
+            );
             $bNodeId = $nextBNodeId;
         }
         return $retval;

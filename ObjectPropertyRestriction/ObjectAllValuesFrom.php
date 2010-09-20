@@ -11,5 +11,10 @@ class ObjectAllValuesFrom extends ObjectPropertyRestriction{
     
     public function getRestrictionLabel() {
         return "only";
-    }    
+    }
+
+    public function getPredicateString(){
+        return "owl:allValuesFrom";
+    }
+    
 }

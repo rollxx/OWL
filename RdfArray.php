@@ -13,6 +13,11 @@ class RdfArray {
 
     public static function createArray($s, $p, /*$o, */$type, $value, $lang=null, $dataType=null) {
         $literal = array("type"=>$type, "value"=>$value);
+        if($value instanceof AnnotationValue){
+            $literal["value"] = $value->getValue();
+            if($value instanceof StringLiteral) $literal["lang"] = $value->getLang();
+            if($value instanceof TypedLiteral) $literal["datatype"] = $value->getDataType();
+        }
         if(isset($lang)) $literal["lang"] = $lang;
         if(isset($dataType)) $literal["datatype"] = $dataType->getValue();
         return array($s => array($p => array($literal)));

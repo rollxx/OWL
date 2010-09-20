@@ -27,15 +27,7 @@ class Literal extends AnnotationValue {
         return "literal";
     }
 
-    public function toRdfArray() {
-        return RdfArray::createArray(
-            "s",
-            "p",
-            "o",
-            $this->getType(),
-            $this->getLexicalValue(),
-            $this instanceof StringLiteral ? $this->getLang():null,
-            method_exists($this, "getDatatype")?$this->getDatatype():null
-        );
+    public function getValue(){
+        return $this->getLexicalValue();
     }
 }
